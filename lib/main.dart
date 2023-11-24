@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:instagram_0/pages/register/register.dart';
+import 'package:instagram_0/pages/splash/splash_pages.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const RegisterPages(),
+      home: const SplashePages(),
       theme: ThemeData(useMaterial3: true),
     );
   }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_0/pages/bottomnavigartor/bottomnavigator.dart';
 
+import 'SignUp_pages.dart';
+
 class RegisterPages extends StatefulWidget {
   const RegisterPages({super.key});
+
   final double a = 20;
 
   @override
@@ -19,6 +22,7 @@ class _RegisterPagesState extends State<RegisterPages>
 
   String textUsername = "a";
   String textPassword = "1";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +30,7 @@ class _RegisterPagesState extends State<RegisterPages>
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 170,
           ),
           const Text(
@@ -50,7 +54,7 @@ class _RegisterPagesState extends State<RegisterPages>
                         cursorColor: Colors.white,
                         controller: username,
                         decoration: InputDecoration(
-                          label: Text("Phone number, email or username"),
+                          label: const Text("Phone number, email or username"),
                           hintText: "hone number, email or username",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -66,7 +70,7 @@ class _RegisterPagesState extends State<RegisterPages>
                           return null;
                         },
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: widget.a,
                       ),
                       TextFormField(
@@ -74,7 +78,7 @@ class _RegisterPagesState extends State<RegisterPages>
                         cursorColor: Colors.white,
                         controller: passworld,
                         decoration: InputDecoration(
-                          label: Text("Password"),
+                          label: const Text("Password"),
                           hintText: " password",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -187,21 +191,35 @@ class _RegisterPagesState extends State<RegisterPages>
                     ),
                   ),
                 ),
-                const Column(
+                Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 190,
                     ),
-                    Divider(),
-                    SizedBox(
+                    const Divider(),
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
-                      "Don't have an account? Sign up",
-                      style: TextStyle(color: Colors.white),
-                    )
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Don't have an account?",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SinUpPages()));
+                          },
+                          child: const Text("Sign up"),
+                        ),
+                      ],
+                    ),
                   ],
-                )
+                ),
               ],
             ),
           ),
